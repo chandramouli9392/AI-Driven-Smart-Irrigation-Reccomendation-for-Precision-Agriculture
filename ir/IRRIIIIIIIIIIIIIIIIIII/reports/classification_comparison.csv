@@ -1,0 +1,11 @@
+Setting,Model,Accuracy,Balanced_Accuracy,Macro_F1,Weighted_F1,NO_Precision,NO_Recall,NO_F1,YES_Precision,YES_Recall,YES_F1,ROC_AUC,PR_AUC
+Baseline,Majority_Class_YES,0.8561,0.5,0.4612,0.7897,0.0,0.0,0.0,0.8561,1.0,0.9225,0.5,0.8561
+B_Independent,RandomForest,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+B_Independent,XGBoost,0.8561,0.5,0.4612,0.7897,0.0,0.0,0.0,0.8561,1.0,0.9225,0.6486,0.9125
+B_Independent,ExtraTrees,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+B_Independent,GradientBoosting,0.8561,0.5,0.4612,0.7897,0.0,0.0,0.0,0.8561,1.0,0.9225,0.8,0.9712
+B_Independent,ExtraTrees_Tuned,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+A_FormulaRef,RandomForest,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+A_FormulaRef,XGBoost,0.8561,0.5,0.4612,0.7897,0.0,0.0,0.0,0.8561,1.0,0.9225,0.6486,0.9125
+A_FormulaRef,ExtraTrees,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+A_FormulaRef,GradientBoosting,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0

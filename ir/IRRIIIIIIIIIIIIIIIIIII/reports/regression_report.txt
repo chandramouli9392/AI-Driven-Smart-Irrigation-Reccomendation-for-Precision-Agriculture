@@ -1,0 +1,52 @@
+AI-DRIVEN SMART IRRIGATION RECOMMENDATION SYSTEM
+TASK B: WATER REQUIREMENT REGRESSION REPORT
+======================================================================
+
+METHODOLOGICAL & SCIENTIFIC DISTINCTION:
+Target: Water_Required_m3 = Irrigation_Requirement_mm * Field_Area_ha * 10
+Field_Area_ha is a constant 605.672381 ha for all records.
+
+Setting A (Full Features) demonstrates upper-bound formula reproduction.
+Setting B (Independent Satellite+Agro) evaluates true remote sensing generalization.
+
+======================================================================
+
+BEST INDEPENDENT REGRESSOR (Setting B): ExtraTrees (Tuned)
+Optimal Hyperparameters: {'n_estimators': 200, 'min_samples_leaf': 1, 'max_features': 0.7, 'max_depth': 16}
+
+REGRESSION PERFORMANCE COMPARISON:
+      Setting            Model  Test_R2  Test_MAE_m3  Test_RMSE_m3  Test_NRMSE%  Test_MAPE%
+B_Independent     RandomForest   0.6527         5659          7622        19.49       30.11
+B_Independent          XGBoost   0.4597         8240          9507        24.31       53.96
+B_Independent       ExtraTrees   0.8613         3751          4817        12.32       16.19
+B_Independent GradientBoosting   0.7051         4229          7024        17.96       20.97
+B_Independent ExtraTrees_Tuned   0.8611         3873          4821        12.33       19.05
+ A_FormulaRef     RandomForest   0.8951         2322          4189        10.71       12.81
+ A_FormulaRef          XGBoost   0.6001         6562          8179        20.92       47.80
+ A_FormulaRef       ExtraTrees   0.9096         2922          3890         9.95       12.30
+ A_FormulaRef GradientBoosting   0.8804         2225          4474        11.44       12.76
+
+TEST SET REGRESSION METRICS (Tuned Setting B):
+  R2 Coefficient of Determination: 0.8611
+  Mean Absolute Error (MAE)      : 3,873 m3
+  Root Mean Squared Error (RMSE) : 4,821 m3
+  Normalized RMSE (NRMSE)        : 12.33%
+  Mean Absolute Percentage Error : 19.05%
+
+TOP 15 FEATURE IMPORTANCES (Setting B):
+          Feature  Importance
+Rain_to_ET0_Ratio    0.338038
+      PRECTOTCORR    0.270505
+           ET0_mm    0.139619
+               Kc    0.073879
+       Crop_Cycle    0.049155
+      Cloud_Cover    0.033638
+    Crop_Progress    0.032552
+      Kc_Progress    0.031800
+       Crop_Stage    0.015601
+            MNDWI    0.005135
+    NDWI_Progress    0.002738
+             NDWI    0.001650
+              BSI    0.001493
+        B11_SWIR1    0.001207
+             NDMI    0.001065

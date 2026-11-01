@@ -1,0 +1,10 @@
+Setting,Model,Test_R2,Test_MAE_m3,Test_RMSE_m3,Test_NRMSE%,Test_MAPE%
+B_Independent,RandomForest,0.6527,5659,7622,19.49,30.11
+B_Independent,XGBoost,0.4597,8240,9507,24.31,53.96
+B_Independent,ExtraTrees,0.8613,3751,4817,12.32,16.19
+B_Independent,GradientBoosting,0.7051,4229,7024,17.96,20.97
+B_Independent,ExtraTrees_Tuned,0.8611,3873,4821,12.33,19.05
+A_FormulaRef,RandomForest,0.8951,2322,4189,10.71,12.81
+A_FormulaRef,XGBoost,0.6001,6562,8179,20.92,47.8
+A_FormulaRef,ExtraTrees,0.9096,2922,3890,9.95,12.3
+A_FormulaRef,GradientBoosting,0.8804,2225,4474,11.44,12.76

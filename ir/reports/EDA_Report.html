@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI-Driven Smart Irrigation Recommendation System - EDA Report</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 30px; background-color: #f8f9fa; color: #2c3e50; }
+  h1, h2, h3 { color: #1a5276; }
+  .header { background: linear-gradient(135deg, #1b4f72, #2980b9); color: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; }
+  .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); margin-bottom: 25px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px; }
+  th, td { padding: 10px 14px; border: 1px solid #e0e0e0; text-align: left; }
+  th { background-color: #f2f4f4; color: #1a5276; font-weight: 600; }
+  tr:nth-child(even) { background-color: #fafafa; }
+  .metric-badge { display: inline-block; padding: 6px 14px; background: #e8f8f5; color: #117a65; border-radius: 20px; font-weight: bold; margin-right: 10px; }
+  .img-container { text-align: center; margin: 20px 0; }
+  .img-container img { max-width: 95%; height: auto; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.12); }
+  .alert { background-color: #fef9e7; border-left: 5px solid #f39c12; padding: 15px; margin: 15px 0; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI-Driven Smart Irrigation Recommendation System</h1>
+  <p>Final Year B.Tech Project | Precision Agriculture in Godavari Delta, Andhra Pradesh</p>
+  <p>Author: Deep Learning & Precision Agriculture Research Engineering Team | Date: November 2026</p>
+</div>
+
+<div class="card">
+  <h2>1. Executive Summary & Dataset Audit</h2>
+  <p>This report documents the rigorous exploratory data analysis of the multi-source agricultural dataset combining Sentinel-2 Level-2A surface reflectance, NASA POWER agro-meteorology, and FAO-56 hydrological water-balance calculations.</p>
+  <div>
+    <span class="metric-badge">Observations: 14,199</span>
+    <span class="metric-badge">Features: 28</span>
+    <span class="metric-badge">Grid Cells: 514</span>
+    <span class="metric-badge">Satellite Scenes: 31</span>
+    <span class="metric-badge">Missing Values: 0</span>
+  </div>
+  <div class="alert">
+    <strong>Scientific Audit Finding:</strong> The target variable <code>Irrigation_Required</code> is deterministically derived from FAO-56 hydrological equations (<code>ETc_mm = Kc * ET0_mm</code>, <code>Effective_Rainfall = 0.8 * PRECTOTCORR</code>). Class distribution is heavily skewed (94.99% YES vs 5.01% NO). Crucially, the 712 "NO" observations occur on only two specific high-precipitation dates (2024-10-11 and 2025-10-11).
+  </div>
+</div>
+
+<div class="card">
+  <h2>2. Target Distribution & Class Imbalance</h2>
+  <div class="img-container">
+    <img src="../figures/01_target_distributions.png" alt="Target Distributions">
+  </div>
+</div>
+
+<div class="card">
+  <h2>3. Remote Sensing Spectral Indices Across Crop Phenology</h2>
+  <p>Spectral indices (NDVI, NDWI, MNDWI, NDMI, EVI) track the physiological maturation and water content of paddy rice across Initial, Development, Mid-Season, and Late-Season stages.</p>
+  <div class="img-container">
+    <img src="../figures/02_spectral_indices_by_stage.png" alt="Spectral Indices">
+  </div>
+</div>
+
+<div class="card">
+  <h2>4. Evapotranspiration & Precipitation Dynamics</h2>
+  <div class="img-container">
+    <img src="../figures/04_et_rainfall_timeseries.png" alt="ET and Rainfall Timeseries">
+  </div>
+</div>
+
+<div class="card">
+  <h2>5. Multivariate Correlation Heatmap</h2>
+  <div class="img-container">
+    <img src="../figures/03_correlation_heatmap.png" alt="Correlation Heatmap">
+  </div>
+</div>
+
+</body>
+</html>
