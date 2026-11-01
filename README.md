@@ -1,12 +1,14 @@
 <div align="center">
 
-<img src="assets/hero.svg" width="100%" alt="Animated AI-driven smart irrigation banner" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B2633,50:168B75,100:9BCB9B&height=220&section=header&text=AI-Driven%20Smart%20Irrigation&fontSize=34&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Precision%20Agriculture%20%7C%20Machine%20Learning%20%7C%20Water%20Intelligence&descAlignY=58&descSize=15" width="100%" alt="Animated project header"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=600&size=23&duration=2800&pause=900&color=168B75&center=true&vCenter=true&width=850&lines=Satellite+Intelligence+%C3%97+Agricultural+Science;Predicting+Irrigation+Needs+for+Paddy+Fields;Turning+Earth+Observation+into+Water+Decisions" alt="Animated project tagline" />
+<img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=600&size=23&duration=2800&pause=900&color=168B75&center=true&vCenter=true&width=850&lines=Satellite+Intelligence+%C3%97+Agricultural+Science;Predicting+Irrigation+Needs+for+Paddy+Fields;Turning+Earth+Observation+into+Water+Decisions" alt="Animated project tagline"/>
 
-<img src="https://img.shields.io/badge/DOMAIN-PRECISION%20AGRICULTURE-168B75?style=for-the-badge" />
-<img src="https://img.shields.io/badge/ML-CLASSIFICATION%20%2B%20REGRESSION-245B78?style=for-the-badge" />
-<img src="https://img.shields.io/badge/REGION-GODAVARI%20DELTA-D49B42?style=for-the-badge" />
+<br/>
+
+<img src="https://img.shields.io/badge/DOMAIN-PRECISION%20AGRICULTURE-168B75?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/ML-CLASSIFICATION%20%2B%20REGRESSION-245B78?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/REGION-GODAVARI%20DELTA-D49B42?style=for-the-badge"/>
 
 ### An AI-powered decision-support system for smarter paddy irrigation
 
@@ -18,17 +20,17 @@ Combining Sentinel-2 satellite observations, NASA POWER agro-meteorology, machin
 
 ## 🌾 Project at a glance
 
-| 🛰️ Earth observation | 🌦️ Agro-climatology |
-|---|---|
-| ESA Sentinel-2 MSI Level-2A surface reflectance | NASA POWER daily meteorological data |
-| Vegetation and water-related spectral indices | FAO-56 Penman–Monteith reference ET (`ET0`) |
-| Spatial observations across agricultural grid cells | Precipitation and crop-stage information |
+| 🛰️ Earth observation                               | 🌦️ Agro-climatology                        |
+| --------------------------------------------------- | ------------------------------------------- |
+| ESA Sentinel-2 MSI Level-2A surface reflectance     | NASA POWER daily meteorological data        |
+| Vegetation and water-related spectral indices       | FAO-56 Penman–Monteith reference ET (`ET0`) |
+| Spatial observations across agricultural grid cells | Precipitation and crop-stage information    |
 
-| 🧠 Machine learning | 💧 Agronomic decision support |
-|---|---|
-| Binary irrigation-requirement classification | FAO-56 crop-water calculations |
-| Volumetric water-demand regression | Paddy ponding-depth considerations |
-| Model benchmarking and validation | Irrigation recommendations and advisories |
+| 🧠 Machine learning                          | 💧 Agronomic decision support             |
+| -------------------------------------------- | ----------------------------------------- |
+| Binary irrigation-requirement classification | FAO-56 crop-water calculations            |
+| Volumetric water-demand regression           | Paddy ponding-depth considerations        |
+| Model benchmarking and validation            | Irrigation recommendations and advisories |
 
 ## ✨ System workflow
 
@@ -53,16 +55,16 @@ flowchart LR
 
 ## 🔬 Study region and data
 
-| Component | Description |
-|---|---|
-| Study region | Godavari River Delta, Andhra Pradesh, India |
-| Target crop | Lowland irrigated paddy rice (*Oryza sativa*) |
-| Satellite sensor | ESA Sentinel-2 MSI Level-2A |
-| Weather source | NASA POWER daily surface meteorology |
-| Reference ET | FAO-56 Penman–Monteith `ET0` |
-| Dataset size | 14,199 observations |
-| Spatial coverage | 514 unique grid cells |
-| Observation dates | 31 scene dates, October 2024 – December 2025 |
+| Component         | Description                                   |
+| ----------------- | --------------------------------------------- |
+| Study region      | Godavari River Delta, Andhra Pradesh, India   |
+| Target crop       | Lowland irrigated paddy rice (*Oryza sativa*) |
+| Satellite sensor  | ESA Sentinel-2 MSI Level-2A                   |
+| Weather source    | NASA POWER daily surface meteorology          |
+| Reference ET      | FAO-56 Penman–Monteith `ET0`                  |
+| Dataset size      | 14,199 observations                           |
+| Spatial coverage  | 514 unique grid cells                         |
+| Observation dates | 31 scene dates, October 2024 – December 2025  |
 
 ## 🧪 Data audit and target construction
 
@@ -71,27 +73,27 @@ The target variables are deterministically generated from a FAO-56-style water-b
 <details>
 <summary><b>View target-generation equations</b></summary>
 
-- **Crop evapotranspiration:** `ETc_mm = Kc × ET0_mm`
-- **Effective rainfall:** `Effective_Rainfall_mm = 0.80 × PRECTOTCORR`
-- **Net irrigation depth:** `Irr_Req_mm = max(0, ETc_mm − Effective_Rainfall_mm)`
-- **Volumetric water demand:** `Water_Required_m3 = Irr_Req_mm × Field_Area_ha × 10`
-- **Binary target:** `YES` when `Water_Required_m3 > 0`; otherwise `NO`.
+* **Crop evapotranspiration:** `ETc_mm = Kc × ET0_mm`
+* **Effective rainfall:** `Effective_Rainfall_mm = 0.80 × PRECTOTCORR`
+* **Net irrigation depth:** `Irr_Req_mm = max(0, ETc_mm − Effective_Rainfall_mm)`
+* **Volumetric water demand:** `Water_Required_m3 = Irr_Req_mm × Field_Area_ha × 10`
+* **Binary target:** `YES` when `Water_Required_m3 > 0`; otherwise `NO`.
 
 </details>
 
 ### Class distribution
 
-| Class | Observations | Share |
-|---|---:|---:|
-| YES | 13,487 | 94.99% |
-| NO | 712 | 5.01% |
+| Class | Observations |  Share |
+| ----- | -----------: | -----: |
+| YES   |       13,487 | 94.99% |
+| NO    |          712 |  5.01% |
 
 **Important data insight:** all 712 `NO` observations occur on two scene dates only: 11 October 2024 and 11 October 2025. This temporal concentration matters when interpreting model performance and planning future validation.
 
 ### Evaluated feature settings
 
-- **Setting A — formula-reproduction benchmark:** includes `ETc_mm` and `Effective_Rainfall_mm`; this is an upper-bound benchmark for reproducing the underlying decision rule.
-- **Setting B — remote-sensing predictive setting:** excludes those direct water-balance terms and evaluates prediction from the remaining satellite, weather, and crop-phenology features as defined in the benchmark experiment.
+* **Setting A — formula-reproduction benchmark:** includes `ETc_mm` and `Effective_Rainfall_mm`; this is an upper-bound benchmark for reproducing the underlying decision rule.
+* **Setting B — remote-sensing predictive setting:** excludes those direct water-balance terms and evaluates prediction from the remaining satellite, weather, and crop-phenology features as defined in the benchmark experiment.
 
 > **Research integrity:** Setting A is not an independent prediction of real-world irrigation events because it includes direct antecedents of the formula-derived target.
 
@@ -99,34 +101,34 @@ The target variables are deterministically generated from a FAO-56-style water-b
 
 ### Classification — `Irrigation_Required`
 
-| Model | Setting | Accuracy | Balanced accuracy | Macro F1 | NO recall |
-|---|---|---:|---:|---:|---:|
-| Majority baseline | Baseline | 0.9499 | 0.5000 | 0.4872 | 0.0000 |
-| Random Forest | B | 0.9520 | 0.7810 | 0.8120 | 0.6250 |
-| **XGBoost (Tuned)** | **B** | **0.9580** | **0.8240** | **0.8490** | **0.7130** |
-| Extra Trees | B | 0.9490 | 0.7620 | 0.7930 | 0.5840 |
-| Gradient Boosting | B | 0.9510 | 0.7950 | 0.8210 | 0.6520 |
-| XGBoost (Full) | A | 0.9995 | 0.9980 | 0.9990 | 0.9960 |
+| Model               | Setting  |   Accuracy | Balanced accuracy |   Macro F1 |  NO recall |
+| ------------------- | -------- | ---------: | ----------------: | ---------: | ---------: |
+| Majority baseline   | Baseline |     0.9499 |            0.5000 |     0.4872 |     0.0000 |
+| Random Forest       | B        |     0.9520 |            0.7810 |     0.8120 |     0.6250 |
+| **XGBoost (Tuned)** | **B**    | **0.9580** |        **0.8240** | **0.8490** | **0.7130** |
+| Extra Trees         | B        |     0.9490 |            0.7620 |     0.7930 |     0.5840 |
+| Gradient Boosting   | B        |     0.9510 |            0.7950 |     0.8210 |     0.6520 |
+| XGBoost (Full)      | A        |     0.9995 |            0.9980 |     0.9990 |     0.9960 |
 
 ### Regression — `Water_Required_m3`
 
-| Model | Setting | Test R² | MAE (m³) | RMSE (m³) |
-|---|---|---:|---:|---:|
-| Random Forest | B | 0.8120 | 3,840 | 5,120 |
-| **XGBoost (Tuned)** | **B** | **0.8350** | **3,520** | **4,810** |
-| Extra Trees | B | 0.8050 | 3,960 | 5,280 |
-| Gradient Boosting | B | 0.8210 | 3,690 | 4,990 |
-| XGBoost (Full) | A | 0.9998 | 85 | 140 |
+| Model               | Setting |    Test R² |  MAE (m³) | RMSE (m³) |
+| ------------------- | ------- | ---------: | --------: | --------: |
+| Random Forest       | B       |     0.8120 |     3,840 |     5,120 |
+| **XGBoost (Tuned)** | **B**   | **0.8350** | **3,520** | **4,810** |
+| Extra Trees         | B       |     0.8050 |     3,960 |     5,280 |
+| Gradient Boosting   | B       |     0.8210 |     3,690 |     4,990 |
+| XGBoost (Full)      | A       |     0.9998 |        85 |       140 |
 
 <sub>These are the benchmark values documented for this experiment. Compare models using minority-class recall, balanced accuracy, macro F1 and regression error—not accuracy or R² alone.</sub>
 
 ## 🧭 Validation strategy
 
-| Validation strategy | Purpose | Reported result |
-|---|---|---:|
+| Validation strategy                                         | Purpose                 |          Reported result |
+| ----------------------------------------------------------- | ----------------------- | -----------------------: |
 | Spatial Group Holdout (`StratifiedGroupKFold` by `Grid_ID`) | Tests unseen grid cells | Macro F1 = 0.798 ± 0.024 |
-| Chronological holdout | Tests later dates | Macro F1 = 0.803 |
-| Naive stratified K-fold | Random-split comparison | Macro F1 = 0.845 |
+| Chronological holdout                                       | Tests later dates       |         Macro F1 = 0.803 |
+| Naive stratified K-fold                                     | Random-split comparison |         Macro F1 = 0.845 |
 
 The higher random-split score is consistent with the risk of optimistic estimates when spatial and temporal structure is mixed across folds. Future evaluation should emphasize date-aware and spatially separated testing.
 
@@ -134,11 +136,11 @@ The higher random-split score is consistent with the risk of optimistic estimate
 
 The project includes `src/irrigation_recommendation.py`, implementing:
 
-- Reference crop evapotranspiration (`ETc = ET0 × Kc`)
-- Paddy standing-water layer management by crop stage
-- Percolation-loss assumptions for delta alluvial soils
-- Rainfall-aware irrigation advisories
-- Terminal drainage guidance before harvest
+* Reference crop evapotranspiration (`ETc = ET0 × Kc`)
+* Paddy standing-water layer management by crop stage
+* Percolation-loss assumptions for delta alluvial soils
+* Rainfall-aware irrigation advisories
+* Terminal drainage guidance before harvest
 
 Configured ponding depths: 25 mm (Initial), 40 mm (Development), 50 mm (Mid-season), and 10 mm (Late-season). Percolation assumptions: 2.0–3.0 mm/day.
 
@@ -207,11 +209,13 @@ python -m venv .venv
 ```
 
 **Windows**
+
 ```bash
 .venv\Scripts\activate
 ```
 
 **macOS / Linux**
+
 ```bash
 source .venv/bin/activate
 ```
@@ -252,11 +256,11 @@ Explore generated plots in [`figures/`](figures/) and experiment outputs in [`re
 
 ## 🚀 Roadmap
 
-- [ ] Validate recommendations against independent field irrigation records.
-- [ ] Extend date-aware evaluation to unseen rainfall events and growing seasons.
-- [ ] Evaluate transferability to additional paddy-growing regions.
-- [ ] Connect live field observations and operational irrigation inputs.
-- [ ] Package the recommendation workflow as an accessible decision-support interface.
+* [ ] Validate recommendations against independent field irrigation records.
+* [ ] Extend date-aware evaluation to unseen rainfall events and growing seasons.
+* [ ] Evaluate transferability to additional paddy-growing regions.
+* [ ] Connect live field observations and operational irrigation inputs.
+* [ ] Package the recommendation workflow as an accessible decision-support interface.
 
 ---
 
@@ -266,6 +270,6 @@ Explore generated plots in [`figures/`](figures/) and experiment outputs in [`re
 
 **Built for precision agriculture | Godavari Delta, Andhra Pradesh, India**
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:123B4A,50:168B75,100:8CBF9F&height=100&section=footer" width="100%" alt="Decorative footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:123B4A,50:168B75,100:8CBF9F&height=120&section=footer" width="100%" alt="Animated footer"/>
 
 </div>
